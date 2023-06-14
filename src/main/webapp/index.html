@@ -36,6 +36,7 @@
 		 * --
 		 * - networkshapes=1: For testing network shapes (temporary)
 		 */
+		
 		var urlParams = (function()
 		{
 			var result = new Object();
@@ -226,16 +227,8 @@
 		})();
 		
 		// Checks for local storage
-		var isLocalStorage = false;
-		
-		try
-		{
-			isLocalStorage = urlParams['local'] != '1' && typeof(localStorage) != 'undefined';
-		}
-		catch (e)
-		{
-			// ignored
-		}
+		var isLocalStorage = true;
+		localStorage.setItem('.mode','device');
 
 		var mxScriptsLoaded = false, mxWinLoaded = false;
 		
